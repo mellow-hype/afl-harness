@@ -1,6 +1,7 @@
 
-example: filein_harness.c filein_harness.h main.c
-	afl-gcc -w filein_harness.c filein_harness.h main.c -o filein_harness
+filein_example: filein_harness.o filein_example.c
+	afl-gcc -w -o filein_example filein_harness.o filein_example.c 
 
-lib: filein_harness.c filein_harness.h
-	afl-gcc -shared -fPIC -w filein_harness.c filein_harness.h -o filein_harness.so
+filein_harness.o: filein_harness.c 
+	afl-gcc -c filein_harness.c -o filein_harness.o
+

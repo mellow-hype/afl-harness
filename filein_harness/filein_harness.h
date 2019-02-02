@@ -14,4 +14,4 @@ void alloc_error();
 char * get_filename_from_args(int argc, char **argv);
 
 // read testcase from file and return in buffer
-char * read_testcase(FILE *testcase);
+char * read_testcase(char *filename);
